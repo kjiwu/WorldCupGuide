@@ -1,0 +1,150 @@
+﻿<phone:PhoneApplicationPage x:Class="WorldCupGuide.MainPage"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+                            xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+                            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                            xmlns:vm="clr-namespace:WorldCupGuide.ViewModels"
+                            mc:Ignorable="d"
+                            FontFamily="{StaticResource PhoneFontFamilyNormal}"
+                            FontSize="{StaticResource PhoneFontSizeNormal}"
+                            Foreground="{StaticResource PhoneForegroundBrush}"
+                            SupportedOrientations="Portrait"
+                            Orientation="Portrait"
+                            shell:SystemTray.IsVisible="False">
+
+    <phone:PhoneApplicationPage.Resources>
+        <vm:MainPageViewModel x:Key="vm" />
+
+
+        <DataTemplate x:Key="GroupHeaderTempalte">
+            <Grid Background="{StaticResource GroupBackgroundBrush}"
+                  Width="60"
+                  Height="60"
+                  HorizontalAlignment="Left"
+                  Margin="0, 8">
+                <TextBlock Style="{StaticResource GroupTitleStyle}"
+                           Text="{Binding GroupName}"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Bottom"/>
+            </Grid>
+        </DataTemplate>
+        
+        <DataTemplate x:Key="GroupFooterTemplate">
+            <Grid Height="30"/>
+        </DataTemplate>
+
+        <DataTemplate x:Key="ListFooterTemplate">
+            <Grid Height="60" />
+        </DataTemplate>
+
+        <DataTemplate x:Key="MatchTemplate">
+            <Grid Margin="0, 8">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="2013.6.13" />
+
+                <TextBlock Text="北京时间" Grid.Column="1"/>
+                <TextBlock Text="6:00"
+                           Grid.Column="1" 
+                           HorizontalAlignment="Right"/>
+
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    
+                    <Image Source="/Assets/Images/CFlag/A/A1.png" />
+                    <TextBlock Grid.Column="1" Text="巴西"/>
+                </Grid>
+
+                <TextBlock Grid.Row="1"
+                           Grid.Column="1" 
+                           Text="0:0"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"/>
+
+                <Grid Grid.Row="1"
+                      Grid.Column="2"
+                      HorizontalAlignment="Right">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="40" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="巴西" />
+                    
+                    <Image Source="/Assets/Images/CFlag/A/A1.png"
+                           Grid.Column="1" />
+                </Grid>
+
+            </Grid>
+        </DataTemplate>
+
+        <Style x:Key="GroupTeamJumpListStyle"
+               TargetType="phone:LongListSelector">
+            <Setter Property="GridCellSize"
+                    Value="113,113" />
+            <Setter Property="LayoutMode"
+                    Value="Grid" />
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <Border Width="113"
+                                Height="113"
+                                Margin="6">
+                            <TextBlock Text="{Binding GroupName}"
+                                       FontFamily="{StaticResource PhoneFontFamilySemiBold}"
+                                       FontSize="48"
+                                       Padding="6"                                       
+                                       VerticalAlignment="Center" />
+                        </Border>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+    </phone:PhoneApplicationPage.Resources>
+
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot"
+          Background="Transparent"
+          DataContext="{StaticResource vm}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.ApplicationTitle}"
+                   Style="{StaticResource PhoneTextNormalStyle}"
+                   Margin="12,0" />
+
+        <Grid x:Name="ContentPanel"
+              Grid.Row="1"
+              Margin="12,0,12,0">
+            
+            <phone:LongListSelector GroupHeaderTemplate="{StaticResource GroupHeaderTempalte}"
+                                    IsGroupingEnabled="True" 
+                                    ItemsSource="{Binding TeamGroups}"
+                                    GroupFooterTemplate="{StaticResource GroupFooterTemplate}"
+                                    ListFooterTemplate="{StaticResource ListFooterTemplate}"
+                                    ItemTemplate="{StaticResource MatchTemplate}"
+                                    JumpListStyle="{StaticResource GroupTeamJumpListStyle}"
+                                    Margin="0, 12"/>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>
