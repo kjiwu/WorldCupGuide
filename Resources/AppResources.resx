@@ -128,4 +128,112 @@
   <data name="ApplicationTitle" xml:space="preserve">
     <value>2014巴西世界杯32强对战表</value>
   </data>
+  <data name="TimeZoneCaption" xml:space="preserve">
+    <value>北京时间</value>
+  </data>
+  <data name="Algeria" xml:space="preserve">
+    <value>阿尔及利亚</value>
+  </data>
+  <data name="America" xml:space="preserve">
+    <value>美国</value>
+  </data>
+  <data name="Argentina" xml:space="preserve">
+    <value>阿根廷</value>
+  </data>
+  <data name="Australia" xml:space="preserve">
+    <value>澳大利亚</value>
+  </data>
+  <data name="Belgium" xml:space="preserve">
+    <value>比利时</value>
+  </data>
+  <data name="BosniaHerzegovina" xml:space="preserve">
+    <value>波黑</value>
+  </data>
+  <data name="Brazil" xml:space="preserve">
+    <value>巴西</value>
+  </data>
+  <data name="Cameroon" xml:space="preserve">
+    <value>喀麦隆</value>
+  </data>
+  <data name="Chile" xml:space="preserve">
+    <value>智利</value>
+  </data>
+  <data name="Coast" xml:space="preserve">
+    <value>科特迪瓦</value>
+  </data>
+  <data name="Columbia" xml:space="preserve">
+    <value>哥伦比亚</value>
+  </data>
+  <data name="CostaRica" xml:space="preserve">
+    <value>哥斯达黎加</value>
+  </data>
+  <data name="Croatia" xml:space="preserve">
+    <value>克罗地亚</value>
+  </data>
+  <data name="Ecuador" xml:space="preserve">
+    <value>厄瓜多尔</value>
+  </data>
+  <data name="England" xml:space="preserve">
+    <value>英格兰</value>
+  </data>
+  <data name="France" xml:space="preserve">
+    <value>法国</value>
+  </data>
+  <data name="Garner" xml:space="preserve">
+    <value>加纳</value>
+  </data>
+  <data name="Germany" xml:space="preserve">
+    <value>德国</value>
+  </data>
+  <data name="Greece" xml:space="preserve">
+    <value>希腊</value>
+  </data>
+  <data name="Holland" xml:space="preserve">
+    <value>荷兰</value>
+  </data>
+  <data name="Honduras" xml:space="preserve">
+    <value>洪都拉斯</value>
+  </data>
+  <data name="Iran" xml:space="preserve">
+    <value>伊朗</value>
+  </data>
+  <data name="Italy" xml:space="preserve">
+    <value>意大利</value>
+  </data>
+  <data name="Japan" xml:space="preserve">
+    <value>日本</value>
+  </data>
+  <data name="Korea" xml:space="preserve">
+    <value>韩国</value>
+  </data>
+  <data name="Mexico" xml:space="preserve">
+    <value>墨西哥</value>
+  </data>
+  <data name="Nigeria" xml:space="preserve">
+    <value>尼日利亚</value>
+  </data>
+  <data name="Portugal" xml:space="preserve">
+    <value>葡萄牙</value>
+  </data>
+  <data name="Russia" xml:space="preserve">
+    <value>俄罗斯</value>
+  </data>
+  <data name="Spain" xml:space="preserve">
+    <value>西班牙</value>
+  </data>
+  <data name="Switzerland" xml:space="preserve">
+    <value>瑞士</value>
+  </data>
+  <data name="Uruguay" xml:space="preserve">
+    <value>乌拉圭</value>
+  </data>
+  <data name="SetAlarm" xml:space="preserve">
+    <value>设置提醒</value>
+  </data>
+  <data name="ShowTeamList" xml:space="preserve">
+    <value>小组赛程</value>
+  </data>
+  <data name="ShowTimeList" xml:space="preserve">
+    <value>日期赛程</value>
+  </data>
 </root>

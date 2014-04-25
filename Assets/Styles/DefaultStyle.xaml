@@ -1,8 +1,21 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/client/2007"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <SolidColorBrush x:Key="GroupBackgroundBrush" 
-                     Color="Aqua"/>
+    <SolidColorBrush x:Key="AppBackgroundBrush" 
+                     Color="White"/>
+
+    <SolidColorBrush x:Key="GroupBackgroundBrush"
+                     Color="#FF86D825" />
+
+    <SolidColorBrush x:Key="MatchItemBackgroundBrush"
+                     Color="#FF86D825" />
+
+    <SolidColorBrush x:Key="MatchItemTextBackgroundBrush"
+                     Color="#FF50C32E" />
+
+    <ImageBrush x:Key="BackgroundBrusn" 
+                ImageSource="/Assets/Images/Background.jpg"
+                Stretch="UniformToFill"/>
 
     <Style x:Key="GroupTitleStyle"
            TargetType="TextBlock">

@@ -61,11 +61,263 @@ namespace WorldCupGuide.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 阿尔及利亚.
+        /// </summary>
+        public static string Algeria {
+            get {
+                return ResourceManager.GetString("Algeria", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 美国.
+        /// </summary>
+        public static string America {
+            get {
+                return ResourceManager.GetString("America", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 2014巴西世界杯32强对战表.
         /// </summary>
         public static string ApplicationTitle {
             get {
                 return ResourceManager.GetString("ApplicationTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 阿根廷.
+        /// </summary>
+        public static string Argentina {
+            get {
+                return ResourceManager.GetString("Argentina", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 澳大利亚.
+        /// </summary>
+        public static string Australia {
+            get {
+                return ResourceManager.GetString("Australia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 比利时.
+        /// </summary>
+        public static string Belgium {
+            get {
+                return ResourceManager.GetString("Belgium", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 波黑.
+        /// </summary>
+        public static string BosniaHerzegovina {
+            get {
+                return ResourceManager.GetString("BosniaHerzegovina", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 巴西.
+        /// </summary>
+        public static string Brazil {
+            get {
+                return ResourceManager.GetString("Brazil", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 喀麦隆.
+        /// </summary>
+        public static string Cameroon {
+            get {
+                return ResourceManager.GetString("Cameroon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 智利.
+        /// </summary>
+        public static string Chile {
+            get {
+                return ResourceManager.GetString("Chile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 科特迪瓦.
+        /// </summary>
+        public static string Coast {
+            get {
+                return ResourceManager.GetString("Coast", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 哥伦比亚.
+        /// </summary>
+        public static string Columbia {
+            get {
+                return ResourceManager.GetString("Columbia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 哥斯达黎加.
+        /// </summary>
+        public static string CostaRica {
+            get {
+                return ResourceManager.GetString("CostaRica", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 克罗地亚.
+        /// </summary>
+        public static string Croatia {
+            get {
+                return ResourceManager.GetString("Croatia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 厄瓜多尔.
+        /// </summary>
+        public static string Ecuador {
+            get {
+                return ResourceManager.GetString("Ecuador", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 英格兰.
+        /// </summary>
+        public static string England {
+            get {
+                return ResourceManager.GetString("England", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 法国.
+        /// </summary>
+        public static string France {
+            get {
+                return ResourceManager.GetString("France", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 加纳.
+        /// </summary>
+        public static string Garner {
+            get {
+                return ResourceManager.GetString("Garner", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 德国.
+        /// </summary>
+        public static string Germany {
+            get {
+                return ResourceManager.GetString("Germany", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 希腊.
+        /// </summary>
+        public static string Greece {
+            get {
+                return ResourceManager.GetString("Greece", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 荷兰.
+        /// </summary>
+        public static string Holland {
+            get {
+                return ResourceManager.GetString("Holland", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 洪都拉斯.
+        /// </summary>
+        public static string Honduras {
+            get {
+                return ResourceManager.GetString("Honduras", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 伊朗.
+        /// </summary>
+        public static string Iran {
+            get {
+                return ResourceManager.GetString("Iran", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 意大利.
+        /// </summary>
+        public static string Italy {
+            get {
+                return ResourceManager.GetString("Italy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 日本.
+        /// </summary>
+        public static string Japan {
+            get {
+                return ResourceManager.GetString("Japan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 韩国.
+        /// </summary>
+        public static string Korea {
+            get {
+                return ResourceManager.GetString("Korea", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 墨西哥.
+        /// </summary>
+        public static string Mexico {
+            get {
+                return ResourceManager.GetString("Mexico", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 尼日利亚.
+        /// </summary>
+        public static string Nigeria {
+            get {
+                return ResourceManager.GetString("Nigeria", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 葡萄牙.
+        /// </summary>
+        public static string Portugal {
+            get {
+                return ResourceManager.GetString("Portugal", resourceCulture);
             }
         }
         
@@ -84,6 +336,78 @@ namespace WorldCupGuide.Resources {
         public static string ResourceLanguage {
             get {
                 return ResourceManager.GetString("ResourceLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 俄罗斯.
+        /// </summary>
+        public static string Russia {
+            get {
+                return ResourceManager.GetString("Russia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 设置提醒.
+        /// </summary>
+        public static string SetAlarm {
+            get {
+                return ResourceManager.GetString("SetAlarm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 小组赛程.
+        /// </summary>
+        public static string ShowTeamList {
+            get {
+                return ResourceManager.GetString("ShowTeamList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 日期赛程.
+        /// </summary>
+        public static string ShowTimeList {
+            get {
+                return ResourceManager.GetString("ShowTimeList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 西班牙.
+        /// </summary>
+        public static string Spain {
+            get {
+                return ResourceManager.GetString("Spain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 瑞士.
+        /// </summary>
+        public static string Switzerland {
+            get {
+                return ResourceManager.GetString("Switzerland", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 北京时间.
+        /// </summary>
+        public static string TimeZoneCaption {
+            get {
+                return ResourceManager.GetString("TimeZoneCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 乌拉圭.
+        /// </summary>
+        public static string Uruguay {
+            get {
+                return ResourceManager.GetString("Uruguay", resourceCulture);
             }
         }
     }
