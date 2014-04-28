@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="zh" />
-  <App xmlns="" ProductID="{aefd7f2b-c1b1-4f4d-b9c5-32a649a9253a}" Title="巴西世界杯观看指南" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="kjiwu" Description="2014巴西世界杯观看指南" Publisher="kjiwu" PublisherID="{71402416-db54-4258-8d87-8527a60ea998}">
+  <App xmlns="" ProductID="{aefd7f2b-c1b1-4f4d-b9c5-32a649a9253a}" Title="世界杯观看指南" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="kjiwu" Description="2014巴西世界杯观看指南" Publisher="kjiwu" PublisherID="{71402416-db54-4258-8d87-8527a60ea998}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
     </Capabilities>
@@ -14,7 +14,7 @@
           <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileSmall.png</SmallImageURI>
           <Count>0</Count>
           <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileMedium.png</BackgroundImageURI>
-          <Title>2014巴西世界杯观看指南</Title>
+          <Title>世界杯观看指南</Title>
           <BackContent>
           </BackContent>
           <BackBackgroundImageURI>
