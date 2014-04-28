@@ -13,7 +13,7 @@ namespace WorldCupGuide.Models
 {
     public class Constants
     {
-        public static string GroupTeams = "ABCDEFGH";
+        public const string GroupTeams = "ABCDEFGH";
 
         public static readonly Dictionary<string, string> CountryCode = new Dictionary<string, string>()
         {
@@ -26,6 +26,8 @@ namespace WorldCupGuide.Models
             {"G1", AppResources.Germany}, {"G2", AppResources.Portugal}, {"G3", AppResources.Garner}, {"G4", AppResources.America},
             {"H1", AppResources.Belgium}, {"H2", AppResources.Algeria}, {"H3", AppResources.Russia}, {"H4", AppResources.Korea},
         };
+
+        public static readonly DateTime OpeningTime = new DateTime(2014, 6, 12);
 
         private static List<MatchItem> matchItems;
 

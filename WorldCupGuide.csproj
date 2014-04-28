@@ -94,12 +94,18 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Commands\AlarmCommand.cs" />
     <Compile Include="Converters\CountryFlagConverter.cs" />
     <Compile Include="Converters\CountryNameConverter.cs" />
+    <Compile Include="CustomControls\MatchItemControl.xaml.cs">
+      <DependentUpon>MatchItemControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\AlarmDataContext.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\AlarmItem.cs" />
     <Compile Include="Models\Constants.cs" />
     <Compile Include="Models\GroupItem.cs" />
     <Compile Include="Models\MatchItem.cs" />
@@ -118,6 +124,10 @@
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
     <Page Include="Assets\Styles\DefaultStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\MatchItemControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

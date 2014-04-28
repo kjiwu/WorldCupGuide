@@ -56,10 +56,12 @@
 
         <DataTemplate x:Key="MatchTemplate">
             <Grid Margin="0, 8"
-                  Background="{StaticResource MatchItemBackgroundBrush}">                
+                  Background="{StaticResource MatchItemBackgroundBrush}">
                 <tt:ContextMenuService.ContextMenu>
                     <tt:ContextMenu IsZoomEnabled="False">
-                        <tt:MenuItem Header="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.SetAlarm}"/>
+                        <tt:MenuItem Header="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.SetAlarm}"
+                                     Command="{Binding AddAlarmCommand, Source={StaticResource vm}}"
+                                     CommandParameter="{Binding}" />
                     </tt:ContextMenu>
                 </tt:ContextMenuService.ContextMenu>
                 <Grid.RowDefinitions>
@@ -95,7 +97,7 @@
                       Margin="0, 8">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
-                        <ColumnDefinition MaxWidth="100" />
+                        <ColumnDefinition MaxWidth="80" />
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
 
@@ -116,7 +118,7 @@
 
                     <Border Grid.Column="1"
                             Background="White"
-                            MaxWidth="60" />
+                            MaxWidth="50" />
                     <TextBlock Grid.Column="1"
                                Text="VS"
                                FontSize="25"
@@ -168,7 +170,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        
+
         <Style x:Key="PhoneButtonBase"
                TargetType="ButtonBase">
             <Setter Property="Background"
@@ -247,7 +249,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        
+
         <Style x:Key="ToggleButtonStyle"
                BasedOn="{StaticResource PhoneButtonBase}"
                TargetType="ToggleButton">
@@ -349,6 +351,96 @@
         </Style>
 
 
+        <DataTemplate x:Key="AlarmTemplate">
+            <Grid Margin="0, 8"
+                  Background="{StaticResource MatchItemBackgroundBrush}">
+                <tt:ContextMenuService.ContextMenu>
+                    <tt:ContextMenu IsZoomEnabled="False">
+                        <tt:MenuItem Header="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.CancelAlarm}"
+                                     Command="{Binding RemoveAlarmCommand, Source={StaticResource vm}}"
+                                     CommandParameter="{Binding}" />
+                    </tt:ContextMenu>
+                </tt:ContextMenuService.ContextMenu>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition MaxWidth="150" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.ColumnSpan="3"
+                            Orientation="Horizontal"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center">
+                    <TextBlock Text="{Binding LocalizedResources.TimeZoneCaption, Source={StaticResource LocalizedStrings}}" />
+                    <TextBlock Text="{Binding MatchTime}"
+                               Margin="18, 0, 0, 0" />
+                </StackPanel>
+
+
+                <Border Grid.Row="1"
+                        Grid.ColumnSpan="3"
+                        Background="{StaticResource MatchItemTextBackgroundBrush}" />
+
+                <Grid Grid.Row="1"
+                      Grid.ColumnSpan="3"
+                      Margin="0, 8">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition MaxWidth="80" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Margin="8, 0, 0, 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="{Binding HomeTeam, Converter={StaticResource flagConverter}}"
+                               VerticalAlignment="Center"
+                               Margin="0, 0, 4, 0" />
+                        <TextBlock Grid.Column="1"
+                                   Text="{Binding HomeTeam, Converter={StaticResource nameConverter}}"
+                                   VerticalAlignment="Center"
+                                   FontSize="24" />
+                    </Grid>
+
+                    <Border Grid.Column="1"
+                            Background="White"
+                            MaxWidth="50" />
+                    <TextBlock Grid.Column="1"
+                               Text="VS"
+                               FontSize="25"
+                               FontWeight="Bold"
+                               Foreground="{StaticResource MatchItemBackgroundBrush}"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center" />
+
+                    <Grid Grid.Column="2"
+                          HorizontalAlignment="Right"
+                          Margin="0, 0, 8, 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="40" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Text="{Binding VisitingTeam, Converter={StaticResource nameConverter}}"
+                                   VerticalAlignment="Center"
+                                   Margin="0, 0, 4, 0"
+                                   FontSize="24" />
+
+                        <Image Source="{Binding VisitingTeam, Converter={StaticResource flagConverter}}"
+                               Grid.Column="1"
+                               VerticalAlignment="Center" />
+                    </Grid>
+                </Grid>
+            </Grid>
+        </DataTemplate>
+
     </phone:PhoneApplicationPage.Resources>
 
 
@@ -365,6 +457,13 @@
     <Grid x:Name="LayoutRoot"
           Background="{StaticResource AppBackgroundBrush}"
           DataContext="{StaticResource vm}">
+
+        <Popup IsOpen="True"
+               VerticalAlignment="Center"
+               Width="{Binding Width, ElementName=LayoutRoot}">
+
+        </Popup>
+
         <phone:Pivot>
             <phone:PivotItem>
                 <Grid>
@@ -426,13 +525,29 @@
                                                 GroupFooterTemplate="{StaticResource GroupFooterTemplate}"
                                                 ListFooterTemplate="{StaticResource ListFooterTemplate}"
                                                 ItemTemplate="{StaticResource MatchTemplate}"
-                                                Margin="0, 12"
-                                                Background="{StaticResource BackgroundBrusn}" />
+                                                Margin="0, 12" />
                     </Grid>
                 </Grid>
             </phone:PivotItem>
             <phone:PivotItem>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
 
+                    <TextBlock Text="{Binding LocalizedResources.AlarmTitle, Source={StaticResource LocalizedStrings}}"
+                               Foreground="Black"
+                               FontSize="30"
+                               FontWeight="Bold"
+                               Margin="12,0" />
+
+                    <phone:LongListSelector Grid.Row="1"
+                                            ItemTemplate="{StaticResource AlarmTemplate}"
+                                            ItemsSource="{Binding Alarms}"
+                                            ListFooterTemplate="{StaticResource ListFooterTemplate}"
+                                            Margin="12, 12, 12, 0" />
+                </Grid>
             </phone:PivotItem>
         </phone:Pivot>
     </Grid>

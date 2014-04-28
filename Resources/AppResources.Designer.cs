@@ -61,6 +61,24 @@ namespace WorldCupGuide.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0}和{1}的比赛马上就要开始了.
+        /// </summary>
+        public static string AlarmContentFormat {
+            get {
+                return ResourceManager.GetString("AlarmContentFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 比赛提醒.
+        /// </summary>
+        public static string AlarmTitle {
+            get {
+                return ResourceManager.GetString("AlarmTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 阿尔及利亚.
         /// </summary>
         public static string Algeria {
@@ -142,6 +160,15 @@ namespace WorldCupGuide.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 取消提醒.
+        /// </summary>
+        public static string CancelAlarm {
+            get {
+                return ResourceManager.GetString("CancelAlarm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 智利.
         /// </summary>
         public static string Chile {
@@ -183,6 +210,15 @@ namespace WorldCupGuide.Resources {
         public static string Croatia {
             get {
                 return ResourceManager.GetString("Croatia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}天.
+        /// </summary>
+        public static string Days {
+            get {
+                return ResourceManager.GetString("Days", resourceCulture);
             }
         }
         
@@ -241,6 +277,15 @@ namespace WorldCupGuide.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0}组.
+        /// </summary>
+        public static string GroupsFormat {
+            get {
+                return ResourceManager.GetString("GroupsFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 荷兰.
         /// </summary>
         public static string Holland {
@@ -295,6 +340,15 @@ namespace WorldCupGuide.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 正在进行的比赛.
+        /// </summary>
+        public static string MatchingTitle {
+            get {
+                return ResourceManager.GetString("MatchingTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 墨西哥.
         /// </summary>
         public static string Mexico {
@@ -318,6 +372,15 @@ namespace WorldCupGuide.Resources {
         public static string Portugal {
             get {
                 return ResourceManager.GetString("Portugal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 确定要退出应用程序吗?.
+        /// </summary>
+        public static string QuitPrompt {
+            get {
+                return ResourceManager.GetString("QuitPrompt", resourceCulture);
             }
         }
         
@@ -390,6 +453,15 @@ namespace WorldCupGuide.Resources {
         public static string Switzerland {
             get {
                 return ResourceManager.GetString("Switzerland", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 距离世界杯开幕还有.
+        /// </summary>
+        public static string TimeDownTip {
+            get {
+                return ResourceManager.GetString("TimeDownTip", resourceCulture);
             }
         }
         

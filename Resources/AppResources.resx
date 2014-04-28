@@ -236,4 +236,28 @@
   <data name="ShowTimeList" xml:space="preserve">
     <value>日期赛程</value>
   </data>
+  <data name="AlarmTitle" xml:space="preserve">
+    <value>比赛提醒</value>
+  </data>
+  <data name="CancelAlarm" xml:space="preserve">
+    <value>取消提醒</value>
+  </data>
+  <data name="AlarmContentFormat" xml:space="preserve">
+    <value>{0}和{1}的比赛马上就要开始了</value>
+  </data>
+  <data name="Days" xml:space="preserve">
+    <value>{0}天</value>
+  </data>
+  <data name="MatchingTitle" xml:space="preserve">
+    <value>正在进行的比赛</value>
+  </data>
+  <data name="TimeDownTip" xml:space="preserve">
+    <value>距离世界杯开幕还有</value>
+  </data>
+  <data name="QuitPrompt" xml:space="preserve">
+    <value>确定要退出应用程序吗?</value>
+  </data>
+  <data name="GroupsFormat" xml:space="preserve">
+    <value>{0}组</value>
+  </data>
 </root>

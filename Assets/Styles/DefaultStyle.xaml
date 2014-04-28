@@ -13,9 +13,12 @@
     <SolidColorBrush x:Key="MatchItemTextBackgroundBrush"
                      Color="#FF50C32E" />
 
-    <ImageBrush x:Key="BackgroundBrusn" 
+    <ImageBrush x:Key="BackgroundBrush" 
                 ImageSource="/Assets/Images/Background.jpg"
                 Stretch="UniformToFill"/>
+
+    <SolidColorBrush x:Key="PopupTextBrush" 
+                     Color="White"/>
 
     <Style x:Key="GroupTitleStyle"
            TargetType="TextBlock">

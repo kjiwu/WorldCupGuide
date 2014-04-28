@@ -41,10 +41,21 @@ namespace WorldCupGuide.Models
             {
                 if (!String.IsNullOrEmpty(value))
                 {
+                    TimeOnly = value;
                     time = String.Format("{0} {1}", Week, value);
                     RaisePropertyChanged(() => Time);
                 }
             }
+        }
+
+        #endregion
+
+        #region TimeOnly
+
+        public string TimeOnly
+        {
+            get;
+            protected set;
         }
 
         #endregion

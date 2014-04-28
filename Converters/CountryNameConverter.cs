@@ -19,7 +19,7 @@ namespace WorldCupGuide.Converters
             }
             else
             {
-                return null;
+                return code;
             }
         }
 

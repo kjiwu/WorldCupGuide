@@ -23,10 +23,21 @@ namespace WorldCupGuide
 
         private void ToggleButton_Click(object sender, RoutedEventArgs e)
         {
-            Debug.WriteLine("OK");
             TeamToggleButton.IsChecked = false;
             TimeToggleButton.IsChecked = false;
             (sender as ToggleButton).IsChecked = true;
+        }
+
+        protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
+        {
+            e.Cancel = true;
+
+            if (MessageBox.Show(AppResources.QuitPrompt, AppResources.ApplicationTitle, MessageBoxButton.OKCancel) == MessageBoxResult.OK)
+            {
+                App.Current.Terminate();
+            }
+
+            base.OnBackKeyPress(e);
         }
     }
 }

@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="WorldCupGuide.CustomControls.MatchItemControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converter="clr-namespace:WorldCupGuide.Converters"
+             mc:Ignorable="d"
+             FontFamily="{StaticResource PhoneFontFamilyNormal}"
+             FontSize="{StaticResource PhoneFontSizeNormal}"
+             Foreground="{StaticResource PhoneForegroundBrush}">
+
+    <UserControl.Resources>
+        <converter:CountryFlagConverter x:Key="flagConverter" />
+        <converter:CountryNameConverter x:Key="nameConverter" />
+    </UserControl.Resources>
+
+
+    <Grid x:Name="LayoutRoot"
+          Background="{StaticResource MatchItemBackgroundBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid Margin="0, 0, 24, 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Image Source="{Binding HomeTeamCode, Converter={StaticResource flagConverter}}" />
+            <TextBlock Grid.Column="1"
+                       VerticalAlignment="Center"
+                       Text="{Binding HomeTeamCode, Converter={StaticResource nameConverter}}"
+                       FontSize="24" 
+                       Margin="12, 0, 0, 0"/>
+        </Grid>
+
+        <Grid Background="White"
+              Grid.Column="1">
+            <TextBlock Grid.Column="1"
+                       Text="VS"
+                       FontSize="25"
+                       FontWeight="Bold"
+                       Foreground="{StaticResource MatchItemBackgroundBrush}"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center" />
+        </Grid>
+
+        <Grid Grid.Column="2"
+              Margin="24, 0, 0, 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="80" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="{Binding VisitingTeamCode, Converter={StaticResource nameConverter}}"
+                       VerticalAlignment="Center"
+                       FontSize="24"
+                       Margin="0, 0, 12, 0" />
+            <Image Source="{Binding VisitingTeamCode, Converter={StaticResource flagConverter}}"
+                   Grid.Column="1" />
+        </Grid>
+    </Grid>
+</UserControl>
