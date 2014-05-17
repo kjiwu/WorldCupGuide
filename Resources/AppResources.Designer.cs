@@ -214,6 +214,15 @@ namespace WorldCupGuide.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 白天模式.
+        /// </summary>
+        public static string DayMode {
+            get {
+                return ResourceManager.GetString("DayMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0}天.
         /// </summary>
         public static string Days {
@@ -363,6 +372,15 @@ namespace WorldCupGuide.Resources {
         public static string Nigeria {
             get {
                 return ResourceManager.GetString("Nigeria", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 夜间模式.
+        /// </summary>
+        public static string NightMode {
+            get {
+                return ResourceManager.GetString("NightMode", resourceCulture);
             }
         }
         

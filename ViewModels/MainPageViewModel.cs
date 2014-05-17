@@ -1,5 +1,7 @@
-﻿using Microsoft.Phone.Reactive;
+﻿using Microsoft.Phone.Controls;
+using Microsoft.Phone.Reactive;
 using Microsoft.Phone.Scheduler;
+using Microsoft.Phone.Shell;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -17,6 +19,7 @@ using WorldCupGuide.CustomControls;
 using WorldCupGuide.Database;
 using WorldCupGuide.Models;
 using WorldCupGuide.Resources;
+using System.IO.IsolatedStorage;
 
 namespace WorldCupGuide.ViewModels
 {
@@ -336,7 +339,11 @@ namespace WorldCupGuide.ViewModels
             popup.IsOpen = true;
 
             var ob = Observable.GenerateWithTime(0, x => x < 1, x => x, x => TimeSpan.FromSeconds(5), x => x + 1);
-            ob.ObserveOnDispatcher().Subscribe(x => popup.IsOpen = false);
+            ob.ObserveOnDispatcher().Subscribe(x =>
+            {
+                popup.IsOpen = false;
+                InitApplicationBar();
+            });
         }
 
         #endregion
@@ -358,6 +365,61 @@ namespace WorldCupGuide.ViewModels
             }
 
             return result;
+        }
+
+        #endregion
+
+        #region InitApplicationBar
+
+        private void InitApplicationBar()
+        {
+            var frame = App.Current.RootVisual as PhoneApplicationFrame;
+            if(null != frame)
+            {
+                var page = frame.Content as PhoneApplicationPage;
+                if(null != page)
+                {
+                    ApplicationBar appbar = new ApplicationBar();
+                    appbar.Opacity = 0.9;
+                    if (App.IsDayMode)
+                    {
+                        appbar.BackgroundColor = (Color)App.Current.Resources["BackgroundColor"];
+                        appbar.ForegroundColor = (Color)App.Current.Resources["ForegroundColor"];
+                    }
+                    else
+                    {
+                        appbar.BackgroundColor = (Color)App.Current.Resources["NightBackgroundColor"];
+                        appbar.ForegroundColor = (Color)App.Current.Resources["NightForegroundColor"];
+                    }
+                    appbar.IsMenuEnabled = true;
+                    appbar.Mode = ApplicationBarMode.Minimized;
+
+                    ApplicationBarMenuItem menu = new ApplicationBarMenuItem();
+                    menu.Text = !App.IsDayMode ? AppResources.DayMode : AppResources.NightMode;                    
+                    menu.Click += (s, args) =>
+                    {
+                        App.IsDayMode = !App.IsDayMode;
+                        menu.Text = !App.IsDayMode ? AppResources.DayMode : AppResources.NightMode;
+
+                        if(App.IsDayMode)
+                        {
+                            appbar.BackgroundColor = (Color)App.Current.Resources["BackgroundColor"];
+                            appbar.ForegroundColor = (Color)App.Current.Resources["ForegroundColor"];
+                        }
+                        else
+                        {
+                            appbar.BackgroundColor = (Color)App.Current.Resources["NightBackgroundColor"];
+                            appbar.ForegroundColor = (Color)App.Current.Resources["NightForegroundColor"];
+                        }
+
+                        App.SaveReadMode();
+                        App.ChangedSkin();
+                    };
+                    appbar.MenuItems.Add(menu);
+
+                    page.ApplicationBar = appbar;
+                }
+            }
         }
 
         #endregion

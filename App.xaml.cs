@@ -8,6 +8,8 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using WorldCupGuide.Resources;
 using System.Collections.Generic;
+using System.IO.IsolatedStorage;
+using System.Windows.Media;
 
 namespace WorldCupGuide
 {
@@ -56,18 +58,22 @@ namespace WorldCupGuide
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
             }
 
+            LoadReadMode();
+            ChangedSkin();
         }
 
         // Code to execute when the application is launching (eg, from Start)
         // This code will not execute when the application is reactivated
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
+           
         }
 
         // Code to execute when the application is activated (brought to foreground)
         // This code will not execute when the application is first launched
         private void Application_Activated(object sender, ActivatedEventArgs e)
         {
+            
         }
 
         // Code to execute when the application is deactivated (sent to background)
@@ -222,5 +228,42 @@ namespace WorldCupGuide
         }
 
         public Dictionary<string, string> CountryCodes;
+
+        protected static readonly string ReadMode = "ReadMode";
+
+        public static bool IsDayMode = true;
+
+        public static void ChangedSkin()
+        {
+            if(IsDayMode)
+            {
+                (App.Current.Resources["AppBackgroundBrush"] as SolidColorBrush).Color = (Color)App.Current.Resources["BackgroundColor"];
+                (App.Current.Resources["TitleForeground"] as SolidColorBrush).Color = (Color)App.Current.Resources["ForegroundColor"];
+            }
+            else
+            {
+                (App.Current.Resources["AppBackgroundBrush"] as SolidColorBrush).Color = (Color)App.Current.Resources["NightBackgroundColor"];
+                (App.Current.Resources["TitleForeground"] as SolidColorBrush).Color = (Color)App.Current.Resources["NightForegroundColor"];
+            }
+        }
+
+        public static void SaveReadMode()
+        {
+            if(IsolatedStorageSettings.ApplicationSettings.Contains(ReadMode))
+            {
+                IsolatedStorageSettings.ApplicationSettings.Remove(ReadMode);
+            }
+
+            IsolatedStorageSettings.ApplicationSettings.Add(ReadMode, IsDayMode);
+            IsolatedStorageSettings.ApplicationSettings.Save();
+        }
+
+        public static void LoadReadMode()
+        {
+            if (IsolatedStorageSettings.ApplicationSettings.Contains(ReadMode))
+            {
+                IsDayMode = (bool)IsolatedStorageSettings.ApplicationSettings[ReadMode];
+            }
+        }
     }
 }

@@ -317,7 +317,7 @@
                                 </VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
                             <Border x:Name="EnabledBackground"
-                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderBrush="{TemplateBinding Background}"
                                     BorderThickness="{TemplateBinding BorderThickness}"
                                     Background="{TemplateBinding Background}"
                                     Margin="{StaticResource PhoneTouchTargetOverhang}">
@@ -474,7 +474,7 @@
                     </Grid.RowDefinitions>
 
                     <TextBlock Text="{Binding LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}"
-                               Foreground="Black"
+                               Foreground="{StaticResource TitleForeground}"
                                FontSize="30"
                                FontWeight="Bold"
                                Margin="12,0" />
@@ -486,7 +486,7 @@
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
                         <ToggleButton Content="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.ShowTeamList}"
-                                      Foreground="Black"
+                                      Foreground="{StaticResource TitleForeground}"
                                       IsChecked="true"
                                       x:Name="TeamToggleButton"
                                       Click="ToggleButton_Click"
@@ -501,7 +501,7 @@
                         </ToggleButton>
                         <ToggleButton Grid.Column="1"
                                       Content="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.ShowTimeList}"
-                                      Foreground="Black"
+                                      Foreground="{StaticResource TitleForeground}"
                                       x:Name="TimeToggleButton"
                                       Click="ToggleButton_Click"
                                       Tag="2"
@@ -537,7 +537,7 @@
                     </Grid.RowDefinitions>
 
                     <TextBlock Text="{Binding LocalizedResources.AlarmTitle, Source={StaticResource LocalizedStrings}}"
-                               Foreground="Black"
+                               Foreground="{StaticResource TitleForeground}"
                                FontSize="30"
                                FontWeight="Bold"
                                Margin="12,0" />

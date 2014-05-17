@@ -260,4 +260,10 @@
   <data name="GroupsFormat" xml:space="preserve">
     <value>{0}组</value>
   </data>
+  <data name="DayMode" xml:space="preserve">
+    <value>白天模式</value>
+  </data>
+  <data name="NightMode" xml:space="preserve">
+    <value>夜间模式</value>
+  </data>
 </root>

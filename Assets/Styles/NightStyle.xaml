@@ -1,18 +1,13 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/client/2007"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <Color x:Key="BackgroundColor">White</Color>
-    <Color x:Key="ForegroundColor">Black</Color>
-    
-    
-    <Color x:Key="NightBackgroundColor">Black</Color>
-    <Color x:Key="NightForegroundColor">White</Color>
+    <Color x:Key="BackgroundColor">Black</Color>
 
     <SolidColorBrush x:Key="AppBackgroundBrush"
                      Color="{StaticResource BackgroundColor}"/>
 
-    <SolidColorBrush x:Key="TitleForeground"
-                     Color="{StaticResource ForegroundColor}"/>
+    <SolidColorBrush x:Key="TitleForeground" 
+                     Color="White"/>
 
     <SolidColorBrush x:Key="GroupBackgroundBrush"
                      Color="#FF86D825" />
